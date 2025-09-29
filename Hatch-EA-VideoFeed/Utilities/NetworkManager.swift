@@ -31,7 +31,7 @@ enum Endpoint {
     }
 }
 
-enum NetworkError: Error {
+enum NetworkError: LocalizedError {
     case badURL
     case invalidResponse
     case badData

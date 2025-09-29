@@ -11,19 +11,21 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = FeedViewModel()
     @State var currentIndex: Int = 0
-    @State var isTyping = false
-//    @State var isPlaying = false
+    @FocusState var isFocused
     
     var body: some View {
-        FeedView(videoURLs: vm.videoURLs, currentIndex: $currentIndex)
+        FeedView(videoURLs: vm.videoURLs, currentIndex: $currentIndex, vm: vm)
                 .ignoresSafeArea()
                 .overlay(alignment: .bottom) {
                     VStack {
-                        ControlBarView() { focus in
-                            isTyping = focus
-                        }
+                        ControlBarView(isFocused: $isFocused, isTyping: $vm.isTyping)
                             .padding()
                     }
+                }
+                .onTapGesture {
+                    vm.isPlaying.toggle()
+                    isFocused = false
+                    print("DEBUG: Content View tapped!")
                 }
     }
 }
