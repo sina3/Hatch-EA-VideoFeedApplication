@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		78B216FC2E8AF8E300EAE710 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78B216FA2E8AF8E300EAE710 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		789FB8902E84D9E40094E780 /* Hatch-EA-VideoFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hatch-EA-VideoFeed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B216FA2E8AF8E300EAE710 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		789FB8872E84D9E40094E780 = {
 			isa = PBXGroup;
 			children = (
+				78B216FA2E8AF8E300EAE710 /* README.md */,
 				789FB8922E84D9E40094E780 /* Hatch-EA-VideoFeed */,
 				789FB8912E84D9E40094E780 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B216FC2E8AF8E300EAE710 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
