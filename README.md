@@ -5,13 +5,12 @@
 
 This project is a proof-of-concept iOS application that replicates the **infinite video feed** pattern seen in TikTok and Instagram Reels. The application takes a manifest of HLS video streams, preloads and manages playback, and provides a smooth user experience.
 
----
 
 ## Build Instructions
 
 * Building the project should be very straightforward since the code is mostly self contained. Make sure network connection is available to fetch manifest file and videos.
 
-** Notes **
+**Notes**
 * Target version of iOS is set to 16 to allow a reasonable degree of backward compatibility.
 * No external dependencies are required
 
@@ -31,7 +30,6 @@ This project is a proof-of-concept iOS application that replicates the **infinit
   Manages a fixed pool of `AVQueuePlayer` and `AVPlayerLooper` instances. Ensures reuse, looping, and helps with effiecient memory management.
 
 
----
 
 ## Key Design Decisions
 
@@ -47,7 +45,6 @@ This project is a proof-of-concept iOS application that replicates the **infinit
 * **Playback Readiness Gate**
   At the end of each swipe to a new video, scrolling is temporarily disabled using a `canScroll` flag until the next video is buffered and ready (`AVPlayer.status == .readyToPlay`). This prevents black screens while waiting for network data.
 
----
 
 ## Smooth Transitions & Performance
 
@@ -56,7 +53,6 @@ This project is a proof-of-concept iOS application that replicates the **infinit
 * **AVPlayerLooper** guarantees videos repeat seamlessly without manual seeking.
 * **UICollectionView** also provides built-in consideration of gesture velocity when user swipes.
 
----
 
 ## Network Efficiency
 
@@ -64,7 +60,6 @@ This project is a proof-of-concept iOS application that replicates the **infinit
 * Prefetching takes advantage of built-in prefetching mechanism in `UICollectionView` and loads only the items requested to be prefetched, avoiding excessive bandwidth use.
 * A **5-second readiness timer** acts as a fallback for slow connections, ensuring scrolling will not remain locked in edge cases where the main publisher fails.
 
----
 
 ## User Experience
 
@@ -90,7 +85,6 @@ This project is a proof-of-concept iOS application that replicates the **infinit
 * I assumed the videos should aspect fill the screen since they had various sizes and resolutions.
 * Some of the playback behavior for the feed was borrowed from similar apps like TikTok.
 
----
 
 ## Future Improvements
 
