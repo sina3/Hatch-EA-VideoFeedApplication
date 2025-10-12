@@ -1,5 +1,5 @@
 
-# Hatch-EA Video Feed – Architecture Document
+# Infinite Video Feed – Architecture Document
 
 ## Overview
 

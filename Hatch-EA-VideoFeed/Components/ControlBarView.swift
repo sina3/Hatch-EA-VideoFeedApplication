@@ -1,6 +1,6 @@
 //
 //  ControlBarView.swift
-//  Hatch-EA-VideoFeed
+//  InfiniteVideoFeed
 //
 //  Created by Sina Rezazadeh on 2025-09-25.
 //
